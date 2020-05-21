@@ -4,7 +4,8 @@
   "description": "a bot for discord",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,15 @@
   "bugs": {
     "url": "https://github.com/AUbillaOliva/DiscordBot/issues"
   },
-  "homepage": "https://github.com/AUbillaOliva/DiscordBot#readme"
+  "homepage": "https://github.com/AUbillaOliva/DiscordBot#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "config": "^3.3.1",
+    "discord.js": "^12.2.0",
+    "node-fetch": "^2.6.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
 }
