@@ -3,11 +3,14 @@ This is a personal discord bot, that can offer multiple options like weather, pi
 
 ## Commands
 
-+ ping
-it return the current ping in the dicord chat.
++ ### ping
 
-+ weather [location]
-it returns the current weather of a specific location.
+   it return the current ping in the dicord chat.
 
-+ covid [location]
-it return the current covid-19 status of a commune of Chile only.
++ ### weather *location*
+
+  it returns the current weather of a specific location.
+
++ ### covid *location*
+
+  it return the current covid-19 status of a commune of Chile only.
