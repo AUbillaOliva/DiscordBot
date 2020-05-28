@@ -4,8 +4,13 @@ const axios = require("axios");
 
 async function weatherApi(locationId) {
   try {
-    const url = `${config.url}?q=${locationId}&appid=${config.apiKey}`;
-    var res = await fetch(url);
+    const urlcl = `${config.url}?q=${locationId},cl&appid=${config.apiKey}`; 
+    const urlinter = `${config.url}?q=${locationId}&appid=${config.apiKey}`;
+    var res = await fetch(urlcl);
+    if(res.status === 404){
+        console.log("not found, search for inter")
+        res = await fetch(urlinter);
+    }
     var resp = await res.json();
     console.log(resp);
     return resp;
