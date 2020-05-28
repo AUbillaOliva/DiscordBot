@@ -17,7 +17,7 @@ const covid = async (msg) => {
     const loc = msg.content.split("covid ");
     function send(){
         return new Promise((res, rej) => {
-            res(comLast(loc[1]));
+            res(comLast(loc[1].normalize('NFD').replace)).replace(/[\u0300-\u036f]/g, "");
         });
     }
     send()
@@ -32,8 +32,8 @@ const covid = async (msg) => {
                 let date = Object.keys(mCase[2][1]);
                 // NUM. CASOS
                 let number = Object.values(mCase[2][1]);
-                let city = Object.values(mCase[0]);
-                if(city[1].toLowerCase() === loc[1].toLowerCase()){
+                let city = Object.values(mCase[0])
+                if(city[1].toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") === loc[1].toLowerCase()){
                     msg.channel.send(
                         "Ciudad: " + city[1] +
                         "\nFecha ultima actualizacion: " + date + 

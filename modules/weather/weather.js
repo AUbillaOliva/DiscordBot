@@ -5,7 +5,7 @@ const getWeather = async (msg) => {
   // CONNECT TO WEATHER API
   function send() {
     return new Promise((res, rej) => {
-      res(weatherApi.weatherApi(loc[1]));
+      res(weatherApi.weatherApi(loc[1].normalize("NFD").replace(/[\u0300-\u036f]/g, "")));
     });
   }
   send()
