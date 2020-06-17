@@ -1,7 +1,7 @@
 const ping = async (msg) => {
     var message = await msg.channel.send('BRIGIDOOOOO');
     message.delete();
-    var ping = Math.floor(message.createdAt - msg.createdAt) - 100;
+    var ping = Math.floor(message.createdAt - msg.createdAt);
     if (ping > 400) {
       msg.channel.send(
         `Hermanito mio llevame pa la casa \:skull_and_crossbones: \`[${ping}]\``
