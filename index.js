@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+require('dotenv').config();
 const client_key = process.env.discordBotToken;
 
 const getWeather = require("./modules/weather/weather.js");
