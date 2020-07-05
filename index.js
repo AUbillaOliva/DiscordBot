@@ -9,7 +9,7 @@ const news = require('./modules/news/news.js');
 
 const client = new Discord.Client();
 
-client.on("ready", () => {
+client.on("ready", async () => {
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setActivity("BRIGIDOOO", {
     type: "STREAMING",
