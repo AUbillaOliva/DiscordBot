@@ -21,13 +21,13 @@ client.on("message", async (msg) => {
   let content = msg.content;
   if (content.startsWith('ping')) {
       ping(msg);
-  }/* else if (content.startsWith('tiempo')) {
+  } else if (content.startsWith('tiempo')) {
     getWeather(msg);
   } else if (content.startsWith('covid')){
     covid(msg);
   } else if (content.startsWith('news')){
     news(msg); 
-  }*/
+  }
 });
 
 client.login(client_key);
