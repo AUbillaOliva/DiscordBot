@@ -30,4 +30,4 @@ client.on("message", async (msg) => {
   }
 });
 
-client.login(process.env.discordBotToken);
+client.login(client_key);
