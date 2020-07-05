@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const client_key = require("./config/config.js");
+const client_key = process.env.discordBotToken;
 
 const getWeather = require("./modules/weather/weather.js");
 const ping = require('./modules/ping/ping.js');

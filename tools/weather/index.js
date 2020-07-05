@@ -1,11 +1,9 @@
-const config = require("./config/config");
 const fetch = require("node-fetch");
-const axios = require("axios");
 
 async function weatherApi(locationId) {
   try {
-    const urlcl = `${config.url}?q=${locationId},cl&appid=${config.apiKey}`; 
-    const urlinter = `${config.url}?q=${locationId}&appid=${config.apiKey}`;
+    const urlcl = `${process.env.weatherApiUrl}?q=${locationId},cl&appid=${process.env.weatherApiKey}`; 
+    const urlinter = `${process.env.weatherApiUrl}?q=${locationId}&appid=${process.env.weatherApiKey}`;
     var res = await fetch(urlcl);
     if(res.status === 404){
         console.log("not found, search for inter")
