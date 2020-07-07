@@ -5,7 +5,7 @@ You can upload yours to **Heroku** to have fun with your friends 🎉
 <br>
 #####  Why Leo Rey Bot?
 Because was the first thing that comes to my mind when naming it lol
-######*brijidoooo*
+###### *brijidoooo*
 
 ---
 
@@ -47,12 +47,15 @@ Feel free to contribute to the project if you like. The idea of the bot is to be
 Make a pull request but keep in mind some rules:
 #### Commit messages
 Commit messages should be emoji-based, so follow this kind of patterns:
-e.g. 
-Documentation	📚 :books:
-Adding a test	✅ :white_check_mark:
-Adding a dependency	➕ :heavy_plus_sign:
-Work in progress	🚧 :construction:
+
+**e.g.** 
+
++   Documentation	📚 <br>
++   Adding a test	✅  <br>
++   Adding a dependency	➕ <br>
++   Work in progress	🚧 <br>
 etc
+
 
 #### Testing 🚧
 Please update the tests to reflect your code changes. Pull requests will not be accepted if they are failing on Heroku.
