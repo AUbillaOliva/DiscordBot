@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
-const client_key = require("./config/config.js");
+require('dotenv').config();
+const client_key = YOUR_DISCORD_TOKEN;
 
 const getWeather = require("./modules/weather/weather.js");
 const ping = require('./modules/ping/ping.js');
@@ -8,12 +9,9 @@ const news = require('./modules/news/news.js');
 
 const client = new Discord.Client();
 
-client.on("ready", () => {
+client.on("ready", async () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setActivity("BRIGIDOOO", {
-    type: "STREAMING",
-    url: "https://www.twitch.tv/argrinus",
-  });
+  client.user.setActivity("BRIGIDOOO");
 });
 
 client.on("message", async (msg) => {

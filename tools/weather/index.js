@@ -1,15 +1,12 @@
-const config = require("./config/config");
 const fetch = require("node-fetch");
-const axios = require("axios");
 
 async function weatherApi(locationId) {
   try {
-    const urlcl = `${config.url}?q=${locationId},cl&appid=${config.apiKey}`; 
-    const urlinter = `${config.url}?q=${locationId}&appid=${config.apiKey}`;
-    var res = await fetch(urlcl);
+    // FOR CHILE LOCATIONS
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${locationId}&appid=${YOUR_API_KEY}`; //REPLACE WITH YOUR OWN API KEY 
+    var res = await fetch(url);
     if(res.status === 404){
-        console.log("not found, search for inter")
-        res = await fetch(urlinter);
+      console.log("nothing found")
     }
     var resp = await res.json();
     console.log(resp);
