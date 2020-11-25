@@ -3,3 +3,4 @@ tools/weather/config/
 tools/covid/config/
 tools/news/config/
 node_modules/
+ffmpeg/
