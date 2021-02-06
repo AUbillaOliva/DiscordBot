@@ -1,7 +1,7 @@
 const { searchNews, headlines } = require("../../tools/news/index.js");
 
 const search = async (msg) => {
-  const loc = msg.content.split("news ");
+  const loc = msg.content.split("|news ");
   function send() {
     return new Promise((res, rej) => {
       if (loc[1] === undefined) {

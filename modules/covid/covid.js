@@ -14,7 +14,7 @@ function customFilter(object, query){
 }
 
 const covid = async (msg) => {
-    const loc = msg.content.split("covid ");
+    const loc = msg.content.split("|covid ");
     function send(){
         return new Promise((res, rej) => {
             res(comLast(loc[1].normalize('NFD').replace)).replace(/[\u0300-\u036f]/g, "");

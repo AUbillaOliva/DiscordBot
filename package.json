@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
+    "dev": "nodemon -L index.js",
     "start": "node index.js"
   },
   "repository": {
@@ -22,13 +22,17 @@
   },
   "homepage": "https://github.com/AUbillaOliva/DiscordBot#readme",
   "dependencies": {
-    "axios": "^0.19.2",
-    "discord.js": "^12.2.0",
+    "axios": "^0.21.1",
+    "discord.js": "^12.3.1",
     "dotenv": "^8.2.0",
-    "node-fetch": "^2.6.0",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-static": "^4.2.7",
+    "node-fetch": "^2.6.1",
+    "opusscript": "0.0.7",
     "request": "^2.88.2"
   },
   "devDependencies": {
+    "config": "^3.3.1",
     "nodemon": "^1.19.4"
   }
 }
