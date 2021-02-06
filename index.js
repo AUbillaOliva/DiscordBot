@@ -44,7 +44,7 @@ client.on("message", async (msg) => {
     msg.member.voice.channel.leave();
   } else if(content === "|wow"){
     const connection = await msg.member.voice.channel.join();
-    const dispatcher = connection.play('./assets/wow.mp3',  { volume: 0.5 });
+    const dispatcher = connection.play('./assets/wow.mp3',  { volume: 1 });
     dispatcher.on('start', () => {
       msg.channel.send('Wow! 👀')
     });
