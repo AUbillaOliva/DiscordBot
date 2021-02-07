@@ -1,9 +1,8 @@
 const fetch = require("node-fetch");
-const config = require('config');
 
 async function weatherApi(locationId) {
   try {
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${locationId}&appid=${config.get('weatherapiKey')}`;
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${locationId}&appid=${ process.env.WEATHER_API_KEY }`;
     var res = await fetch(url);
     if(res.status === 404){
       console.log("nothing found")

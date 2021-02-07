@@ -1,7 +1,5 @@
 const Discord = require("discord.js");
 require('dotenv').config();
-const config = require('config');
-const client_key = config.get('discordtoken');
 
 const getWeather = require("./modules/weather/weather.js");
 const ping = require('./modules/ping/ping.js');
@@ -59,4 +57,4 @@ client.on("message", async (msg) => {
   }
 });
 
-client.login(client_key);
+client.login(process.env.DISCORD_TOKEN);

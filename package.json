@@ -24,7 +24,6 @@
   "dependencies": {
     "axios": "^0.21.1",
     "discord.js": "^12.3.1",
-    "dotenv": "^8.2.0",
     "ffmpeg": "0.0.4",
     "ffmpeg-static": "^4.2.7",
     "node-fetch": "^2.6.1",
@@ -32,7 +31,7 @@
     "request": "^2.88.2"
   },
   "devDependencies": {
-    "config": "^3.3.1",
+    "dotenv": "^8.2.0",
     "nodemon": "^1.19.4"
   }
 }
