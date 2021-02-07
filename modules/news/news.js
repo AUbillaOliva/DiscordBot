@@ -1,36 +1,38 @@
-const newsApi = require('../../tools/news/index.js');
-const Discord = require('Discord.js');
+const { searchNews, headlines } = require("../../tools/news/index.js");
 
-const getLatest = (msg) => {
-    const query = msg.content.split('news ').join('');
-
-    function get(){
-        return new Promise((res, rej) => {
-            res(newsApi.latestNews(query.normalize("NFD").replace(/[\u0300-\u036f]/g, "")));
-            rej(new Error('lol'));
-        });
+const search = async (msg) => {
+  const loc = msg.content.split("|news ");
+  function send() {
+    return new Promise((res, rej) => {
+      if (loc[1] === undefined) {
+        res(headlines());
+      } else {
+        res(
+          searchNews(
+            loc[1]
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "")
+              .toLowerCase()
+          )
+        );
+      }
+    });
+  }
+  send().then((value) => {
+    for (let i = 0; i < value.articles.length; i++) {
+      let embed = {
+        title: value.articles[i].title,
+        url: value.articles[i].url,
+        image: { url: value.articles[i].urlToImage },
+        author: {
+          name: value.articles[i].author,
+        },
+        timestamp: value.articles[i].publishedAt,
+        description: value.articles[i].description,
+      };
+      msg.channel.send({ embed: embed });
     }
-    get()
-        .then(value => {
-            try{
-                msg.channel.send(`Noticias sobre ${query}`);
-                let embed;
-                for(let i = 0; i < 5; i++){
-                    msg.channel.send({embed: {
-                        title: value.articles[i].title,
-                        url: value.articles[i].url,
-                        description: value.articles[i].description,
-                        image: {
-                            url: value.articles[i].urlToImage
-                        },
-                        color: 3447003,
-                        author: {
-                            name: value.articles[i].author
-                        }
-                    }});
-                }
-           } catch(error){ console.error(error)}
-        });
-}
+  });
+};
 
-module.exports = getLatest;
+module.exports = search;
